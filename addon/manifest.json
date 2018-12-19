@@ -1,0 +1,15 @@
+{ 
+"manifest_version": 2,
+"name": "UniGLExt"
+, "version": "0",
+"permissions": [
+        "activeTab","webRequest","webRequestBlocking","downloads",
+        "tabs", "http://*/*", "https://*/*","webNavigation", "*://*/*"
+    ],
+ "content_scripts":
+    [{ "matches": ["file:///*/*", "http://*/*", "https://*/*"]
+     , "all_frames": true
+     , "run_at": "document_start"
+     , "js": ["glsl2js.js", "app.js", "content.js"]
+     }]
+}

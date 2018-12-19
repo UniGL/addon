@@ -1,0 +1,17 @@
+var test_func = function(){
+    this.test = undefined;
+};
+
+funciton test_a(){
+    var compiled = ` function eval_main(){  b = a + 1;  }`
+    eval(compiled);
+    test_func.test = eval_main;
+}
+
+function test_b(){
+    var b = 0;
+    var a = 0;
+    test_func.test();
+}
+
+test_b();
